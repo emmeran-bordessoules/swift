@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Activity" representedClassName=".Activity" syncable="YES">
+        <attribute name="activityChoosen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dateActivity" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descriptionActivity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameActivity" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actloc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="actloc" inverseEntity="Location" syncable="YES"/>
+        <relationship name="actspeak" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="actspeak" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName=".Location" syncable="YES">
+        <attribute name="adressLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actloc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="actloc" inverseEntity="Activity" syncable="YES"/>
+    </entity>
+    <entity name="Speaker" representedClassName=".Speaker" syncable="YES">
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameSpeaker" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoSpeaker" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actspeak" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="actspeak" inverseEntity="Activity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="-603" positionY="-216" width="128" height="133"/>
+        <element name="Location" positionX="-38" positionY="-304" width="128" height="88"/>
+        <element name="Speaker" positionX="-864" positionY="-261" width="128" height="103"/>
+    </elements>
 </model>
