@@ -8,14 +8,22 @@
 
 import Foundation
 import CoreData
+import MapKit
 
 
-class Location: NSManagedObject {
+class Location: NSManagedObject, MKAnnotation {
 
 // Insert code here to add functionality to your managed object subclass
+
+    var coordinate: CLLocationCoordinate2D {
+        let coor = adressLocation!.componentsSeparatedByString(",")
+        let tmp1 = Double(coor[0])
+        let tmp2 = Double(coor[1])
+        return CLLocationCoordinate2D(latitude: tmp1!, longitude: tmp2!)
+    }
     
-    func getLocationActi(loc: Location)->String{
-        return loc.adressLocation!
+    var title: String? {
+        return nameLocation!
     }
 
 }

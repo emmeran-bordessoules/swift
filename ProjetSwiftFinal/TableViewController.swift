@@ -12,7 +12,6 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
-    
     var activities : [Activity] = []
     
     var headerAct = ["Day 1 : Monday, July 4","Day 2 : Tuesday, July 5","Day 3 : Wednesday, July 6",
@@ -20,11 +19,14 @@ class TableViewController: UITableViewController {
     
     var day1 : [Activity] = []
     var day2 : [Activity] = []
+    var day3 : [Activity] = []
+    var day4 : [Activity] = []
+    var day5 : [Activity] = []
+    var day6 : [Activity] = []
+
     var dayErr : [Activity] = []
     
     var sections = Dictionary<String, Array<Activity>>()
-    
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // 1
@@ -41,7 +43,6 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         
-        
         let tableSection = sections[headerAct[indexPath.section]]
         let tableItem = tableSection![indexPath.row]
         
@@ -51,16 +52,27 @@ class TableViewController: UITableViewController {
         let dateActivityForma = dateFormatter.stringFromDate(tableItem.dateActivity!)
         cell?.detailTextLabel?.text = dateActivityForma
         
-        return cell!
+        return cell! // return the cell with the name and the hour of the activity
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! CustomHeaderCell
-        headerCell.backgroundColor = UIColor.grayColor()
+      
+        
+        headerCell.backgroundColor = UIColorFromRGB(0x781A1D)
         
         headerCell.headerLabel.text = headerAct[section]
         
-        return headerCell
+        return headerCell //return the date of the activities
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -75,11 +87,20 @@ class TableViewController: UITableViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.contentInset = UIEdgeInsetsMake(64,0,0,0);
+        
+        title = "Program"
+        
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to the database
+        _ = appDelegate.managedObjectContext
+        
+        _ = NSFetchRequest(entityName: "Activity")
+        
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -87,7 +108,6 @@ class TableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         
     }
     
@@ -99,49 +119,53 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //1
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        self.tabBarController?.navigationItem.title = "Program"
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to database
         let managedContext = appDelegate.managedObjectContext
         
-        //2
-        let fetchRequest = NSFetchRequest(entityName: "Activity")
-        
-        //3
+        let fetchRequest = NSFetchRequest(entityName: "Activity") //request all the activities
+
         do {
-            let results =
-            try managedContext.executeFetchRequest(fetchRequest)
-            activities = results as! [Activity]
+            let results = try managedContext.executeFetchRequest(fetchRequest) //execute the request
+            activities = results as! [Activity] //put the results in activities
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-        activities.sortInPlace({ $0.dateActivity!.compare($1.dateActivity!) == .OrderedAscending })
+        activities.sortInPlace({ $0.dateActivity!.compare($1.dateActivity!) == .OrderedAscending })//sort activities by date
         self.tableView.reloadData()
         
         self.sections[headerAct[0]] = day1
         self.sections[headerAct[1]] = day2
+        self.sections[headerAct[2]] = day3
+        self.sections[headerAct[3]] = day4
+        self.sections[headerAct[4]] = day5
+        self.sections[headerAct[5]] = day6
         
         for i in activities{
-            
-            switch (i.getDateActi(i)) {
-            case "01-01":
+            switch (i.getDateActi(i)) {//sort activities in arrays
+            case "04-07":
                 self.sections[headerAct[0]]!.append(i)
-            case "10-01":
+            case "05-07":
                 self.sections[headerAct[1]]!.append(i)
+            case "06-07":
+                self.sections[headerAct[2]]!.append(i)
+            case "07-07":
+                self.sections[headerAct[3]]!.append(i)
+            case "08-07":
+                self.sections[headerAct[4]]!.append(i)
+            case "09-07":
+                self.sections[headerAct[5]]!.append(i)
             default:
                 self.dayErr.append(i)
-                
             }
         }
-        
     }
     
     
-    @IBAction func unwindToActivity(sender: UIStoryboardSegue){
-        
-        // yolo
+    @IBAction func unwindToDetailActivity(sender: UIStoryboardSegue){
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -149,7 +173,7 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         
-        if segue.identifier == "ShowDetail"{
+        if segue.identifier == "ShowDetail"{ //prepare to segue an activity
             let nav = segue.destinationViewController as! UINavigationController
             let actiViewCont = nav.topViewController as! ActivityDetailViewController
             
@@ -160,8 +184,6 @@ class TableViewController: UITableViewController {
                 actiViewCont.acti = tableItem
             }
         }
-        
-        
     }
     
     

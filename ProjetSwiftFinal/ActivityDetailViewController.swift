@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import MapKit
+
+
 
 class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextFieldDelegate,UITableViewDataSource {
     
@@ -20,30 +23,29 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
     
     @IBOutlet weak var tableSP: UITableView!
     
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var switchState: UISwitch!
     
     @IBAction func saveButton(sender: UISwitch) {
                 
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         let managedContext = appDelegate.managedObjectContext
         
         let fetchRequest = NSFetchRequest(entityName: "Activity")
         fetchRequest.predicate = NSPredicate(format: "nameActivity = %@", acti.nameActivity!)
         
+        
         var res : NSManagedObject
         var results: NSArray
         
-                if switchState.on {
+        if switchState.on {
             switchState.setOn(true, animated:true)
-            //acti.activityChoosen = 1
-                    
                     do {
                         try results =  managedContext.executeFetchRequest(fetchRequest) as! [Activity]
                         res = results [0] as! NSManagedObject
-                        res.setValue(true, forKey: "activityChoosen")
+                        res.setValue(true, forKey: "activityChoosen")// put the boolean to true in the core data
                     } catch {
-                        print("Error requête")
+                        print("Error request")
                     }
                     
                     do {
@@ -52,19 +54,15 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
                     catch {
                         print("No save")
                     }
-
             }
-    
         else {
             switchState.setOn(false, animated:false)
-            //acti.activityChoosen = 0
-                    
                     do {
                         try results =  managedContext.executeFetchRequest(fetchRequest) as! [Activity]
                         res = results [0] as! NSManagedObject
-                        res.setValue(false, forKey: "activityChoosen")
+                        res.setValue(false, forKey: "activityChoosen")// put the boolean to false in the core data
                     } catch {
-                        print("Error requête")
+                        print("Error request")
                     }
                     
                     do {
@@ -73,35 +71,42 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
                     catch {
                         print("No save")
                     }
-
-            
             }
-        
         self.reloadInputViews()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        map.addAnnotation(self.acti.actloc!)
+        
+        // set initial location in Montpellier
+        let initialLocation = CLLocation(latitude: 43.63, longitude: 3.866)
+        let regionRadius: CLLocationDistance = 1000
+        func centerMapOnLocation(location: CLLocation) {
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 4.0, regionRadius * 4.0)
+            map.setRegion(coordinateRegion, animated: true)
+        }
+        centerMapOnLocation(initialLocation)
+        map.delegate = self
+
         self.titreActivity.text = acti.nameActivity
         self.descActivity.text = acti.descriptionActivity
         
-        
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()//date with day month format
         dateFormatter.dateFormat = "dd-MM"
         let tmp1 = dateFormatter.stringFromDate(acti.dateActivity!)
         
-        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.dateFormat = "hh:mm a"//date with hour minutes format
         let tmp2 = dateFormatter.stringFromDate(acti.dateActivity!)
         
         self.dateActi.text = tmp1
         self.heureActi.text = tmp2
         let set = acti.actspeak
-        speaker = (set?.allObjects)! as! [Speaker]
+        speaker = (set?.allObjects)! as! [Speaker] //load all the speakers
         
         self.tableSP.delegate = self
         self.tableSP.dataSource = self
-        
-        title = "Save activity"
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,17 +139,16 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
             cell.nameSp.text = "coucou"
         }
         
-        return cell
+        return cell //display all the speaker
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         
     }
     
     override func viewWillAppear(animated: Bool) {
     
-        if acti.activityChoosen!.boolValue == true {
+        if acti.activityChoosen!.boolValue == true { //display the switch at the state of the boolean activity choosen
             switchState.on = true
         } else {
             switchState.on = false
@@ -157,12 +161,11 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
         
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "ShowDetailSpeaker"{
+        if segue.identifier == "ShowDetailSpeaker"{ //prepare to segue a speaker
             let nav = segue.destinationViewController as! UINavigationController
             let speakerViewCont = nav.topViewController as! SpeakerViewController
             

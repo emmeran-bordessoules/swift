@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		455E39E61C9C6008003C7AB2 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E39E51C9C6008003C7AB2 /* MyTabBar.swift */; };
+		4546AC7B1CB2782E005B7391 /* 584px-Medals_FISU.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4546AC7A1CB2782E005B7391 /* 584px-Medals_FISU.svg.png */; };
+		4546AC7D1CB28BF5005B7391 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546AC7C1CB28BF5005B7391 /* RestaurantTableViewController.swift */; };
 		455E39E81C9C697C003C7AB2 /* myActivitiesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E39E71C9C697C003C7AB2 /* myActivitiesTableController.swift */; };
+		456BA2CC1CAC20EF00F57B8E /* Map-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 456BA2CB1CAC20EF00F57B8E /* Map-30.png */; };
+		456BA2CE1CAC212A00F57B8E /* Google News-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 456BA2CD1CAC212A00F57B8E /* Google News-30.png */; };
 		457F45E81C970BD0005216C0 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F45E71C970BD0005216C0 /* ActivityDetailViewController.swift */; };
 		4581CE051C999C9E006BCCE0 /* SpeakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */; };
 		4581CE071C99CC68006BCCE0 /* ActivityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581CE061C99CC68006BCCE0 /* ActivityTest.swift */; };
+		459685661CA8422200562AF7 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459685651CA8422200562AF7 /* VCMapView.swift */; };
+		4598CAD31CA2DAF100949A82 /* RestaurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */; };
 		45B0CDF01C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEA1C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift */; };
 		45B0CDF11C9816FF0060C8A3 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEB1C9816FF0060C8A3 /* Speaker.swift */; };
 		45B0CDF21C9816FF0060C8A3 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEC1C9816FF0060C8A3 /* Location+CoreDataProperties.swift */; };
@@ -19,7 +24,6 @@
 		45B0CDF41C9816FF0060C8A3 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEE1C9816FF0060C8A3 /* Activity+CoreDataProperties.swift */; };
 		45B0CDF51C9816FF0060C8A3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEF1C9816FF0060C8A3 /* Activity.swift */; };
 		45C704DF1C9309F100C07435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C704DE1C9309F100C07435 /* AppDelegate.swift */; };
-		45C704E11C9309F100C07435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C704E01C9309F100C07435 /* ViewController.swift */; };
 		45C704E41C9309F100C07435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C704E21C9309F100C07435 /* Main.storyboard */; };
 		45C704E71C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45C704E51C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld */; };
 		45C704E91C9309F100C07435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C704E81C9309F100C07435 /* Assets.xcassets */; };
@@ -48,11 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		455E39E51C9C6008003C7AB2 /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
+		4546AC7A1CB2782E005B7391 /* 584px-Medals_FISU.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "584px-Medals_FISU.svg.png"; path = "../../../584px-Medals_FISU.svg.png"; sourceTree = "<group>"; };
+		4546AC7C1CB28BF5005B7391 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		455E39E71C9C697C003C7AB2 /* myActivitiesTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myActivitiesTableController.swift; sourceTree = "<group>"; };
+		456BA2CB1CAC20EF00F57B8E /* Map-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Map-30.png"; path = "../../../../Downloads/Map-30.png"; sourceTree = "<group>"; };
+		456BA2CD1CAC212A00F57B8E /* Google News-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Google News-30.png"; path = "../../../../Downloads/Google News-30.png"; sourceTree = "<group>"; };
 		457F45E71C970BD0005216C0 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerViewController.swift; sourceTree = "<group>"; };
 		4581CE061C99CC68006BCCE0 /* ActivityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTest.swift; sourceTree = "<group>"; };
+		459685651CA8422200562AF7 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
+		4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurationViewController.swift; sourceTree = "<group>"; };
 		45B0CDEA1C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Speaker+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		45B0CDEB1C9816FF0060C8A3 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		45B0CDEC1C9816FF0060C8A3 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -61,7 +70,6 @@
 		45B0CDEF1C9816FF0060C8A3 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		45C704DB1C9309F100C07435 /* ProjetSwiftFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwiftFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C704DE1C9309F100C07435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45C704E01C9309F100C07435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45C704E31C9309F100C07435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45C704E61C9309F100C07435 /* ProjetSwiftFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjetSwiftFinal.xcdatamodel; sourceTree = "<group>"; };
 		45C704E81C9309F100C07435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,15 +140,19 @@
 			isa = PBXGroup;
 			children = (
 				45C704DE1C9309F100C07435 /* AppDelegate.swift */,
-				45C704E01C9309F100C07435 /* ViewController.swift */,
 				45C704E21C9309F100C07435 /* Main.storyboard */,
+				4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */,
 				455E39E71C9C697C003C7AB2 /* myActivitiesTableController.swift */,
-				455E39E51C9C6008003C7AB2 /* MyTabBar.swift */,
+				4546AC7C1CB28BF5005B7391 /* RestaurantTableViewController.swift */,
 				4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */,
 				457F45E71C970BD0005216C0 /* ActivityDetailViewController.swift */,
+				459685651CA8422200562AF7 /* VCMapView.swift */,
 				45C705111C930C3E00C07435 /* CustomHeaderCell.swift */,
 				45C7050F1C930A3700C07435 /* TableViewController.swift */,
 				45C704E81C9309F100C07435 /* Assets.xcassets */,
+				456BA2CD1CAC212A00F57B8E /* Google News-30.png */,
+				4546AC7A1CB2782E005B7391 /* 584px-Medals_FISU.svg.png */,
+				456BA2CB1CAC20EF00F57B8E /* Map-30.png */,
 				45C704EA1C9309F100C07435 /* LaunchScreen.storyboard */,
 				45C704ED1C9309F100C07435 /* Info.plist */,
 				45C704E51C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld */,
@@ -235,6 +247,7 @@
 				TargetAttributes = {
 					45C704DA1C9309F100C07435 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5HYRW2A39C;
 					};
 					45C704F11C9309F100C07435 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -271,9 +284,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4546AC7B1CB2782E005B7391 /* 584px-Medals_FISU.svg.png in Resources */,
+				456BA2CC1CAC20EF00F57B8E /* Map-30.png in Resources */,
 				45C704EC1C9309F100C07435 /* LaunchScreen.storyboard in Resources */,
 				45C704E91C9309F100C07435 /* Assets.xcassets in Resources */,
 				45C704E41C9309F100C07435 /* Main.storyboard in Resources */,
+				456BA2CE1CAC212A00F57B8E /* Google News-30.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,17 +317,18 @@
 				4581CE051C999C9E006BCCE0 /* SpeakerViewController.swift in Sources */,
 				457F45E81C970BD0005216C0 /* ActivityDetailViewController.swift in Sources */,
 				45B0CDF31C9816FF0060C8A3 /* Location.swift in Sources */,
-				455E39E61C9C6008003C7AB2 /* MyTabBar.swift in Sources */,
 				45B0CDF01C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift in Sources */,
 				455E39E81C9C697C003C7AB2 /* myActivitiesTableController.swift in Sources */,
+				4598CAD31CA2DAF100949A82 /* RestaurationViewController.swift in Sources */,
 				45C705121C930C3E00C07435 /* CustomHeaderCell.swift in Sources */,
 				45B0CDF21C9816FF0060C8A3 /* Location+CoreDataProperties.swift in Sources */,
 				45C704E71C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld in Sources */,
-				45C704E11C9309F100C07435 /* ViewController.swift in Sources */,
 				45B0CDF41C9816FF0060C8A3 /* Activity+CoreDataProperties.swift in Sources */,
 				45B0CDF11C9816FF0060C8A3 /* Speaker.swift in Sources */,
+				459685661CA8422200562AF7 /* VCMapView.swift in Sources */,
 				45C704DF1C9309F100C07435 /* AppDelegate.swift in Sources */,
 				45B0CDF51C9816FF0060C8A3 /* Activity.swift in Sources */,
+				4546AC7D1CB28BF5005B7391 /* RestaurantTableViewController.swift in Sources */,
 				45C705101C930A3700C07435 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,10 +470,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjetSwiftFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LaCoherence.ProjetSwiftFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -464,10 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjetSwiftFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LaCoherence.ProjetSwiftFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

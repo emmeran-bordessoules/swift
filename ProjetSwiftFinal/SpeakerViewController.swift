@@ -8,8 +8,9 @@
 
 import UIKit
 
+// La classe SpeakerViewController permet d'afficher le speaker correpondant à une activité
+
 class SpeakerViewController: UIViewController {
-    
     
     var speaker: Speaker?
 
@@ -20,10 +21,9 @@ class SpeakerViewController: UIViewController {
         super.viewDidLoad()
         
         self.nomSpeaker.text = speaker?.nameSpeaker
-        
         self.labelSpeaker.text = speaker?.details
 
-        // Do any additional setup after loading the view.
+        // Charge et affiche le nom et description du speaker
     }
 
     override func didReceiveMemoryWarning() {

@@ -14,9 +14,217 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+    }
+    
+    
+    // Insertion des données en dur pour qu'elles soient disponnible au lancement de n'importe quel Simulator
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        deleteAllData("Activity")
+//        print("coreData erased")
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to the database
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Activity") //request all the activities
+        
+        
+        //3
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)//execute the request
+            if results.count == 0{ //see if the database is empty. If so fill it
+                print("chargement des données")
+                let entity2 =  NSEntityDescription.entityForName("Location",inManagedObjectContext:managedContext)
+                let location = NSManagedObject(entity: entity2!,insertIntoManagedObjectContext: managedContext)
+                let location2 = NSManagedObject(entity: entity2!,insertIntoManagedObjectContext: managedContext)
+                
+                location.setValue("43.632674,3.862571",forKey: "adressLocation")
+                location.setValue("Polytech",forKey: "nameLocation")
+                
+                location2.setValue("43.634569,3.868765",forKey: "adressLocation")
+                location2.setValue("Chemin du respect",forKey: "nameLocation")
+                
+                let entity =  NSEntityDescription.entityForName("Activity",inManagedObjectContext:managedContext)
+                let activity = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity2 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity3 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity4 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity5 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity6 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity7 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity8 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity9 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity10 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity11 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity12 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity13 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                let activity14 = NSManagedObject(entity: entity!,insertIntoManagedObjectContext: managedContext)
+                
+                
+                activity.setValue("Opening ceremony", forKey: "nameActivity")
+                var dateActi = NSDate(timeIntervalSinceReferenceDate: 1467529200)
+                activity.setValue(dateActi, forKey: "dateActivity")
+                activity.setValue("When the fun start, the program of the week", forKey: "descriptionActivity")
+                activity.setValue(true,forKey:"activityChoosen")
+                activity.setValue(location,forKey:"actloc")
+                
+                activity2.setValue("Lunch", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467540000)
+                activity2.setValue(dateActi, forKey: "dateActivity")
+                activity2.setValue("Lunch in a beautiful restaurant called MacDo, taste the french gastronomy", forKey: "descriptionActivity")
+                activity2.setValue(false,forKey:"activityChoosen")
+                activity2.setValue(location2,forKey:"actloc")
+                
+                activity3.setValue("UNESCO session", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467546300)
+                activity3.setValue(dateActi, forKey: "dateActivity")
+                activity3.setValue("UNESCO will present their goal and organisation ", forKey: "descriptionActivity")
+                activity3.setValue(false,forKey:"activityChoosen")
+                activity3.setValue(location2,forKey:"actloc")
+                
+                activity4.setValue("Plenary session : Values/Ethics", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467615600)
+                activity4.setValue(dateActi, forKey: "dateActivity")
+                activity4.setValue("A session to talk about Values, Ethics and Integrity ", forKey: "descriptionActivity")
+                activity4.setValue(false,forKey:"activityChoosen")
+                activity4.setValue(location2,forKey:"actloc")
+                
+                activity5.setValue("Workshops: Values/Ethics", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467619200)
+                activity5.setValue(dateActi, forKey: "dateActivity")
+                activity5.setValue("A great Workshops to talk about Values, Ethics and Integrity ", forKey: "descriptionActivity")
+                activity5.setValue(false,forKey:"activityChoosen")
+                activity5.setValue(location2,forKey:"actloc")
+                
+                activity6.setValue("Plenary session: Leadership", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467702000)
+                activity6.setValue(dateActi, forKey: "dateActivity")
+                activity6.setValue("How to become a leader in 10 lessons ", forKey: "descriptionActivity")
+                activity6.setValue(false,forKey:"activityChoosen")
+                activity6.setValue(location2,forKey:"actloc")
+                
+                activity7.setValue("Workshop: Leadership", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467705600)
+                activity7.setValue(dateActi, forKey: "dateActivity")
+                activity7.setValue("think leader, eat leader, be leader, sleep leader", forKey: "descriptionActivity")
+                activity7.setValue(false,forKey:"activityChoosen")
+                activity7.setValue(location2,forKey:"actloc")
+                
+                activity8.setValue("Plenary session: Dual Career", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467788400)
+                activity8.setValue(dateActi, forKey: "dateActivity")
+                activity8.setValue("A single career is good, but a double is better", forKey: "descriptionActivity")
+                activity8.setValue(false,forKey:"activityChoosen")
+                activity8.setValue(location2,forKey:"actloc")
+                
+                activity9.setValue("Sport presentation: Handball", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467792000)
+                activity9.setValue(dateActi, forKey: "dateActivity")
+                activity9.setValue("Learn to play the greatest sport in earth after basketball ", forKey: "descriptionActivity")
+                activity9.setValue(false,forKey:"activityChoosen")
+                activity9.setValue(location2,forKey:"actloc")
+                
+                activity10.setValue("Plenary session: Gender equality", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467874800)
+                activity10.setValue(dateActi, forKey: "dateActivity")
+                activity10.setValue("Gender equality and equal opportunities or access", forKey: "descriptionActivity")
+                activity10.setValue(false,forKey:"activityChoosen")
+                activity10.setValue(location2,forKey:"actloc")
+                
+                activity11.setValue("Workshop: Gender equality", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467882900)
+                activity11.setValue(dateActi, forKey: "dateActivity")
+                activity11.setValue("Time to practise Gender equality...", forKey: "descriptionActivity")
+                activity11.setValue(false,forKey:"activityChoosen")
+                activity11.setValue(location2,forKey:"actloc")
+                
+                activity12.setValue("Project Presentation", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467961200)
+                activity12.setValue(dateActi, forKey: "dateActivity")
+                activity12.setValue("Oral Presentation, don't stress ", forKey: "descriptionActivity")
+                activity12.setValue(false,forKey:"activityChoosen")
+                activity12.setValue(location2,forKey:"actloc")
+                
+                activity13.setValue("Forum conclusions", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467961200)
+                activity13.setValue(dateActi, forKey: "dateActivity")
+                activity13.setValue("It's OVER, I repeat : IT'S OVER ", forKey: "descriptionActivity")
+                activity13.setValue(false,forKey:"activityChoosen")
+                activity13.setValue(location2,forKey:"actloc")
+                
+                activity14.setValue("", forKey: "nameActivity")
+                dateActi = NSDate(timeIntervalSinceReferenceDate: 1467982800)
+                activity14.setValue(dateActi, forKey: "dateActivity")
+            
+                
+                let entity3 =  NSEntityDescription.entityForName("Speaker",inManagedObjectContext:managedContext)
+                let speaker = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                let speaker2 = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                let speaker3 = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                let speaker4 = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                let speaker5 = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                let speaker6 = NSManagedObject(entity: entity3!,insertIntoManagedObjectContext: managedContext)
+                
+                speaker.setValue("Clement bouly", forKey: "nameSpeaker")
+                speaker.setValue("définition du #sw@g", forKey: "details")
+                
+                speaker2.setValue("ben", forKey: "nameSpeaker")
+                speaker2.setValue("le raleur", forKey: "details")
+                
+                speaker3.setValue("michael jackson", forKey: "nameSpeaker")
+                speaker3.setValue("on l\'entend plus chanter", forKey: "details")
+                
+                speaker4.setValue("Maroane le bogoss", forKey: "nameSpeaker")
+                speaker4.setValue("on l\'entend plus chanter", forKey: "details")
+                
+                speaker5.setValue("Emmeran", forKey: "nameSpeaker")
+                speaker5.setValue("arrete de raler", forKey: "details")
+                
+                speaker6.setValue("Ruiz", forKey: "nameSpeaker")
+                speaker6.setValue("Oh Babacar !", forKey: "details")
+                
+                activity.setValue(NSSet(object: speaker), forKey: "actspeak")
+                let activityspeaker = activity.mutableSetValueForKey("actspeak")
+                activityspeaker.addObject(speaker2)
+                activityspeaker.addObject(speaker3)
+                activityspeaker.addObject(speaker)
+                activityspeaker.addObject(speaker4)
+                activityspeaker.addObject(speaker5)
+                activityspeaker.addObject(speaker6)
+                activity2.setValue(NSSet(object: speaker3), forKey: "actspeak")
+                
+                do {
+                    try managedContext.save()
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
         return true
     }
 

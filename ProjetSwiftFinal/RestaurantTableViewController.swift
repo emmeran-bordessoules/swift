@@ -1,27 +1,29 @@
 //
-//  myActivitiesTableController.swift
+//  RestaurantTableViewController.swift
 //  ProjetSwiftFinal
 //
-//  Created by LaCoherence on 18/03/2016.
+//  Created by LaCoherence on 04/04/2016.
 //  Copyright © 2016 LaCoherence. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-// La classe myActivitiesTableController permet de d'afficher la liste des activités sauvegardées par l'utilisateur
+class RestaurantTableViewController: UITableViewController {
 
-class myActivitiesTableController: UITableViewController {
     
-    var activities : [Activity] = []
-
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.contentInset = UIEdgeInsetsMake(64,0,0,0);
-        
-        title = "Activity Choosen"
-        self.tabBarController?.navigationItem.title = "Activity Choosen"
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,61 +35,23 @@ class myActivitiesTableController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return activities.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        let tableItem = activities[indexPath.row]
-        cell.textLabel?.text = tableItem.nameActivity
 
         return cell
     }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to database
-        let managedContext = appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "Activity")
-        fetchRequest.predicate = NSPredicate(format: "activityChoosen = %@", true) //choose all the activities with activityChoosen equals to true
-        
-        do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
-            activities = results as! [Activity] //put the results in activities
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        
-        activities.sortInPlace({ $0.dateActivity!.compare($1.dateActivity!) == .OrderedAscending }) //sort by date
-        self.tableView.reloadData()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "ShowDetail"{
-            let nav = segue.destinationViewController as! UINavigationController
-            let actiViewCont = nav.topViewController as! ActivityDetailViewController
-            
-            if let indexPath=self.tableView.indexPathForSelectedRow{
-                let tableItem = activities[indexPath.row]
-                actiViewCont.acti = tableItem
-            }
-        }
-    }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.
