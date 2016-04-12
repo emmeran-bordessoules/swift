@@ -18,13 +18,12 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
     @IBOutlet weak var dateActi: UILabel!
     @IBOutlet weak var titreActivity: UILabel!
     @IBOutlet weak var descActivity: UILabel!
+    @IBOutlet weak var tableSP: UITableView!
+    @IBOutlet weak var map: MKMapView!
+ 
+    @IBOutlet weak var switchState: UISwitch!
     var acti : Activity!
     var speaker=[Speaker]()
-    
-    @IBOutlet weak var tableSP: UITableView!
-    
-    @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var switchState: UISwitch!
     
     @IBAction func saveButton(sender: UISwitch) {
                 
@@ -78,36 +77,8 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        map.addAnnotation(self.acti.actloc!)
         
-        // set initial location in Montpellier
-        let initialLocation = CLLocation(latitude: 43.63, longitude: 3.866)
-        let regionRadius: CLLocationDistance = 1000
-        func centerMapOnLocation(location: CLLocation) {
-            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 4.0, regionRadius * 4.0)
-            map.setRegion(coordinateRegion, animated: true)
-        }
-        centerMapOnLocation(initialLocation)
-        map.delegate = self
-
-        self.titreActivity.text = acti.nameActivity
-        self.descActivity.text = acti.descriptionActivity
-        
-        let dateFormatter = NSDateFormatter()//date with day month format
-        dateFormatter.dateFormat = "dd-MM"
-        let tmp1 = dateFormatter.stringFromDate(acti.dateActivity!)
-        
-        dateFormatter.dateFormat = "hh:mm a"//date with hour minutes format
-        let tmp2 = dateFormatter.stringFromDate(acti.dateActivity!)
-        
-        self.dateActi.text = tmp1
-        self.heureActi.text = tmp2
-        let set = acti.actspeak
-        speaker = (set?.allObjects)! as! [Speaker] //load all the speakers
-        
-        self.tableSP.delegate = self
-        self.tableSP.dataSource = self
-    }
+            }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -153,9 +124,38 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
         } else {
             switchState.on = false
         }
+        
+        map.addAnnotation(self.acti.actloc!)
+        
+        // set initial location in Montpellier
+        let initialLocation = CLLocation(latitude: 43.63, longitude: 3.866)
+        let regionRadius: CLLocationDistance = 1000
+        func centerMapOnLocation(location: CLLocation) {
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 4.0, regionRadius * 4.0)
+            map.setRegion(coordinateRegion, animated: true)
+        }
+        centerMapOnLocation(initialLocation)
+        map.delegate = self
+        
+        self.titreActivity.text = acti.nameActivity
+        self.descActivity.text = acti.descriptionActivity
+        
+        let dateFormatter = NSDateFormatter()//date with day month format
+        dateFormatter.dateFormat = "dd-MM"
+        let tmp1 = dateFormatter.stringFromDate(acti.dateActivity!)
+        
+        dateFormatter.dateFormat = "hh:mm a"//date with hour minutes format
+        let tmp2 = dateFormatter.stringFromDate(acti.dateActivity!)
+        
+        self.dateActi?.text = tmp1
+        self.heureActi?.text = tmp2
+        let set = acti.actspeak
+        speaker = (set?.allObjects)! as! [Speaker] //load all the speakers
+        
+        self.tableSP.delegate = self
+        self.tableSP.dataSource = self
+
     }
-    
-    
     
     @IBAction func unwindToDetailActivity(sender: UIStoryboardSegue){
         
@@ -177,9 +177,6 @@ class ActivityDetailViewController: UIViewController,UITableViewDelegate,UITextF
         }
         
     }
-    
-    // print("contenu de speaker avant envoi : " + speaker[0].details!)
-    // print("****** segue de activity vers speaker réussi *****")
     
     /*
     // MARK: - Navigation

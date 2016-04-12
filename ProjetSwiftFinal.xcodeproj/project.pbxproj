@@ -16,7 +16,7 @@
 		4581CE051C999C9E006BCCE0 /* SpeakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */; };
 		4581CE071C99CC68006BCCE0 /* ActivityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581CE061C99CC68006BCCE0 /* ActivityTest.swift */; };
 		459685661CA8422200562AF7 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459685651CA8422200562AF7 /* VCMapView.swift */; };
-		4598CAD31CA2DAF100949A82 /* RestaurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */; };
+		4598CAD31CA2DAF100949A82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598CAD21CA2DAF100949A82 /* MapViewController.swift */; };
 		45B0CDF01C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEA1C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift */; };
 		45B0CDF11C9816FF0060C8A3 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEB1C9816FF0060C8A3 /* Speaker.swift */; };
 		45B0CDF21C9816FF0060C8A3 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEC1C9816FF0060C8A3 /* Location+CoreDataProperties.swift */; };
@@ -32,6 +32,7 @@
 		45C705021C9309F100C07435 /* ProjetSwiftFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C705011C9309F100C07435 /* ProjetSwiftFinalUITests.swift */; };
 		45C705101C930A3700C07435 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C7050F1C930A3700C07435 /* TableViewController.swift */; };
 		45C705121C930C3E00C07435 /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C705111C930C3E00C07435 /* CustomHeaderCell.swift */; };
+		45C84AB91CBCE81000E40A73 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AB81CBCE81000E40A73 /* LocationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,7 @@
 		4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerViewController.swift; sourceTree = "<group>"; };
 		4581CE061C99CC68006BCCE0 /* ActivityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTest.swift; sourceTree = "<group>"; };
 		459685651CA8422200562AF7 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
-		4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurationViewController.swift; sourceTree = "<group>"; };
+		4598CAD21CA2DAF100949A82 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		45B0CDEA1C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Speaker+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		45B0CDEB1C9816FF0060C8A3 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		45B0CDEC1C9816FF0060C8A3 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		45C705031C9309F100C07435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45C7050F1C930A3700C07435 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		45C705111C930C3E00C07435 /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
+		45C84AB81CBCE81000E40A73 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +143,7 @@
 			children = (
 				45C704DE1C9309F100C07435 /* AppDelegate.swift */,
 				45C704E21C9309F100C07435 /* Main.storyboard */,
-				4598CAD21CA2DAF100949A82 /* RestaurationViewController.swift */,
+				4598CAD21CA2DAF100949A82 /* MapViewController.swift */,
 				455E39E71C9C697C003C7AB2 /* myActivitiesTableController.swift */,
 				4546AC7C1CB28BF5005B7391 /* RestaurantTableViewController.swift */,
 				4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */,
@@ -165,6 +167,7 @@
 			children = (
 				45C704F61C9309F100C07435 /* ProjetSwiftFinalTests.swift */,
 				4581CE061C99CC68006BCCE0 /* ActivityTest.swift */,
+				45C84AB81CBCE81000E40A73 /* LocationTests.swift */,
 				45C704F81C9309F100C07435 /* Info.plist */,
 			);
 			path = ProjetSwiftFinalTests;
@@ -319,7 +322,7 @@
 				45B0CDF31C9816FF0060C8A3 /* Location.swift in Sources */,
 				45B0CDF01C9816FF0060C8A3 /* Speaker+CoreDataProperties.swift in Sources */,
 				455E39E81C9C697C003C7AB2 /* myActivitiesTableController.swift in Sources */,
-				4598CAD31CA2DAF100949A82 /* RestaurationViewController.swift in Sources */,
+				4598CAD31CA2DAF100949A82 /* MapViewController.swift in Sources */,
 				45C705121C930C3E00C07435 /* CustomHeaderCell.swift in Sources */,
 				45B0CDF21C9816FF0060C8A3 /* Location+CoreDataProperties.swift in Sources */,
 				45C704E71C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld in Sources */,
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4581CE071C99CC68006BCCE0 /* ActivityTest.swift in Sources */,
+				45C84AB91CBCE81000E40A73 /* LocationTests.swift in Sources */,
 				45C704F71C9309F100C07435 /* ProjetSwiftFinalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LaCoherence.ProjetSwiftFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -491,6 +496,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LaCoherence.ProjetSwiftFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

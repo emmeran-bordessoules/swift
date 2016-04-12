@@ -14,33 +14,17 @@ class Activity: NSManagedObject {
     
     // Insert code here to add functionality to your managed object subclass
     
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext!){
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
     
+    // return the day and the month of an activity
     func getDateActi(act: Activity) -> String{
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM"
-        let tmp1 = dateFormatter.stringFromDate(act.dateActivity!)
+        let day = dateFormatter.stringFromDate(act.dateActivity!)
         
-        return tmp1
+        return day
     }
-    
-    /*func getSectionItems(section: Int) -> [Activity] {
-        var sectionItems = [Activity]()
-        
-        // loop through the testArray to get the items for this sections's date
-        for item in testArry {
-            let dateTextItem = item as DateTextItem
-            let df = NSDateFormatter()
-            df.dateFormat = "MM/dd/yyyy"
-            let dateString = df.stringFromDate(dateTextItem.insertDate)
-            
-            // if the item's date equals the section's date then add it
-            if dateString == sectionsInTable[section] as NSString {
-                sectionItems.append(dateTextItem)
-            }
-        }
-        
-        return sectionItems
-    }*/
-    
 }

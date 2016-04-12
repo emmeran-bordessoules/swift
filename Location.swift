@@ -14,7 +14,7 @@ import MapKit
 class Location: NSManagedObject, MKAnnotation {
 
 // Insert code here to add functionality to your managed object subclass
-
+    //return the coordinates with the string of the adress location
     var coordinate: CLLocationCoordinate2D {
         let coor = adressLocation!.componentsSeparatedByString(",")
         let tmp1 = Double(coor[0])

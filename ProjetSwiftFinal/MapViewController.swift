@@ -8,22 +8,42 @@
 
 import UIKit
 import MapKit
+import CoreData
 
-class RestaurationViewController: UIViewController,MKMapViewDelegate {
+class MapViewController: UIViewController,MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    var locations : [Location] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // set initial location in Montpellier
-        let initialLocation = CLLocation(latitude: 43.6, longitude: 3.8833)
+        let initialLocation = CLLocation(latitude: 43.625, longitude: 3.8833)
         let regionRadius: CLLocationDistance = 2000
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 4.0, regionRadius * 4.0)
             mapView.setRegion(coordinateRegion, animated: true)
         }
         centerMapOnLocation(initialLocation)
-        mapView.delegate = self
+        self.mapView.delegate = self
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to the database
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Location") //request all the locations
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest) //execute the request
+            self.locations = results as! [Location] //put the results in location
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        for i in locations{
+            self.mapView.addAnnotation(i)
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +54,8 @@ class RestaurationViewController: UIViewController,MKMapViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.tabBarController?.navigationItem.title = "Catering"
+        
+        self.tabBarController?.navigationItem.title = "Map of Montpellier"
     }
     
 

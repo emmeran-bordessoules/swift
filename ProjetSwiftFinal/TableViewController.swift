@@ -90,7 +90,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.contentInset = UIEdgeInsetsMake(64,0,0,0);
+        self.tableView.contentInset = UIEdgeInsetsMake(64,0,30,0);
         
         title = "Program"
         
