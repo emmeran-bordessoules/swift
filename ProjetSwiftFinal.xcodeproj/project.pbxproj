@@ -23,6 +23,8 @@
 		45B0CDF31C9816FF0060C8A3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDED1C9816FF0060C8A3 /* Location.swift */; };
 		45B0CDF41C9816FF0060C8A3 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEE1C9816FF0060C8A3 /* Activity+CoreDataProperties.swift */; };
 		45B0CDF51C9816FF0060C8A3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0CDEF1C9816FF0060C8A3 /* Activity.swift */; };
+		45B540EA1CBE657500A414C3 /* Restaurant-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B540E91CBE657500A414C3 /* Restaurant-30.png */; };
+		45B540EC1CBE691100A414C3 /* CateringDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B540EB1CBE691100A414C3 /* CateringDetail.swift */; };
 		45C704DF1C9309F100C07435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C704DE1C9309F100C07435 /* AppDelegate.swift */; };
 		45C704E41C9309F100C07435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C704E21C9309F100C07435 /* Main.storyboard */; };
 		45C704E71C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45C704E51C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld */; };
@@ -69,6 +71,8 @@
 		45B0CDED1C9816FF0060C8A3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		45B0CDEE1C9816FF0060C8A3 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		45B0CDEF1C9816FF0060C8A3 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		45B540E91CBE657500A414C3 /* Restaurant-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restaurant-30.png"; sourceTree = SOURCE_ROOT; };
+		45B540EB1CBE691100A414C3 /* CateringDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CateringDetail.swift; sourceTree = "<group>"; };
 		45C704DB1C9309F100C07435 /* ProjetSwiftFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwiftFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C704DE1C9309F100C07435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C704E31C9309F100C07435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				45C704DE1C9309F100C07435 /* AppDelegate.swift */,
 				45C704E21C9309F100C07435 /* Main.storyboard */,
 				4598CAD21CA2DAF100949A82 /* MapViewController.swift */,
+				45B540EB1CBE691100A414C3 /* CateringDetail.swift */,
 				455E39E71C9C697C003C7AB2 /* myActivitiesTableController.swift */,
 				4546AC7C1CB28BF5005B7391 /* RestaurantTableViewController.swift */,
 				4581CE041C999C9E006BCCE0 /* SpeakerViewController.swift */,
@@ -155,6 +160,7 @@
 				456BA2CD1CAC212A00F57B8E /* Google News-30.png */,
 				4546AC7A1CB2782E005B7391 /* 584px-Medals_FISU.svg.png */,
 				456BA2CB1CAC20EF00F57B8E /* Map-30.png */,
+				45B540E91CBE657500A414C3 /* Restaurant-30.png */,
 				45C704EA1C9309F100C07435 /* LaunchScreen.storyboard */,
 				45C704ED1C9309F100C07435 /* Info.plist */,
 				45C704E51C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld */,
@@ -290,6 +296,7 @@
 				4546AC7B1CB2782E005B7391 /* 584px-Medals_FISU.svg.png in Resources */,
 				456BA2CC1CAC20EF00F57B8E /* Map-30.png in Resources */,
 				45C704EC1C9309F100C07435 /* LaunchScreen.storyboard in Resources */,
+				45B540EA1CBE657500A414C3 /* Restaurant-30.png in Resources */,
 				45C704E91C9309F100C07435 /* Assets.xcassets in Resources */,
 				45C704E41C9309F100C07435 /* Main.storyboard in Resources */,
 				456BA2CE1CAC212A00F57B8E /* Google News-30.png in Resources */,
@@ -324,6 +331,7 @@
 				455E39E81C9C697C003C7AB2 /* myActivitiesTableController.swift in Sources */,
 				4598CAD31CA2DAF100949A82 /* MapViewController.swift in Sources */,
 				45C705121C930C3E00C07435 /* CustomHeaderCell.swift in Sources */,
+				45B540EC1CBE691100A414C3 /* CateringDetail.swift in Sources */,
 				45B0CDF21C9816FF0060C8A3 /* Location+CoreDataProperties.swift in Sources */,
 				45C704E71C9309F100C07435 /* ProjetSwiftFinal.xcdatamodeld in Sources */,
 				45B0CDF41C9816FF0060C8A3 /* Activity+CoreDataProperties.swift in Sources */,

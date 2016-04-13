@@ -41,8 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        deleteAllData("Activity")
-//        print("coreData erased")
+        deleteAllData("Activity")
+        deleteAllData("Location")
+        print("coreData erased")
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //connection to the database
         let managedContext = appDelegate.managedObjectContext

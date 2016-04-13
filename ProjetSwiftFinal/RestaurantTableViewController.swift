@@ -51,6 +51,19 @@ class RestaurantTableViewController: UITableViewController {
 
         return cell!
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetailRest"{
+            let nav = segue.destinationViewController as! UINavigationController
+            let catering = nav.topViewController as! CateringDetail
+            
+            
+            if let indexPath=self.tableView.indexPathForSelectedRow{
+                catering.restaurant = listRest[indexPath.row]
+            }
+            
+        }
+    }
  
 
     /*
